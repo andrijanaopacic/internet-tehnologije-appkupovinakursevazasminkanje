@@ -13,6 +13,7 @@ Ciljevi aplikacije su omogućavanje bezbednog i lakog pristupa kursevima, video 
 - Kupovina kurseva i online plaćanje
 - Gledanje video lekcija u okviru aplikacije
 - Pregled kupljenih kurseva i praćenje napretka
+
 **Za edukatore:**
 - Dodavanje kurseva
 - Uređivanje kurseva
@@ -20,6 +21,7 @@ Ciljevi aplikacije su omogućavanje bezbednog i lakog pristupa kursevima, video 
 - Pregled dostupnih kurseva
 - Postavljanje video lekcija, opisa, cena i materijala
 - Pregled prodaje kurseva i klijenata
+
 **Za administratore:**
 - Mesečni izveštaji o broju klijenata
 - Statistika prodaje kurseva
