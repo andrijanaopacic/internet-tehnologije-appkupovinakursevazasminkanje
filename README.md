@@ -1,53 +1,100 @@
-## Veb aplikacija za kupovinu i gledanje kurseva šminkanja
+# Online Makeup Course Platform
 
-Aplikacija je namenjena za prodaju i gledanje kurseva šminkanja.
-Ciljevi aplikacije su omogućavanje bezbednog i lakog pristupa kursevima, video lekcijama i dodatnim materijalima, kao i praćenje napretka. Pored toga važno je poboljšanje korisničkog iskustva kroz jednostavnu registraciju, pregled ponude, plaćanje i praćenje kupljenih kurseva, pristup lekcijama nezavisno od vremena i lokacije. Jedan od ciljeva je i obezbeđivanje mesta na tržištu kroz digitalizaciju edukacija.
+A web application for purchasing and watching makeup courses, built as a university project for the **Internet Technologies 2025** course at the Faculty of Organizational Sciences, University of Belgrade.
 
+> Forked from [elab-development/internet-tehnologije-2025-appkupovinakursevazasminkanje_2022_0117](https://github.com/elab-development/internet-tehnologije-2025-appkupovinakursevazasminkanje_2022_0117)
 
-## Funkcionalnosti aplikacije:
+---
 
-**Za klijente:**
-- Registracija i kreiranje korisničkog naloga
-- Prijava
-- Pregled ponude kurseva: šminka, trajna šminka obrva i usana
-- Kupovina kurseva i online plaćanje
-- Gledanje video lekcija u okviru aplikacije
-- Pregled kupljenih kurseva i praćenje napretka
+## About the Project
 
-**Za edukatore:**
-- Dodavanje kurseva
-- Uređivanje kurseva
-- Brisanje kurseva
-- Pregled dostupnih kurseva
-- Postavljanje video lekcija, opisa, cena i materijala
-- Pregled prodaje kurseva i klijenata
+This platform enables users to browse, purchase, and watch makeup courses online. It supports three user roles — clients, educators, and administrators — each with a dedicated set of features. The goal is to provide a seamless and accessible experience for learning makeup techniques, independent of location or time, while also offering educators a space to digitize and sell their knowledge.
 
-**Za administratore:**
-- Mesečni izveštaji o broju klijenata
-- Statistika prodaje kurseva
-- Pregled klijenata i edukatora
-- Dodavanje novih korisnika
+---
 
+## Features
 
-## Tehnologije
+### For Clients
+- Register and create a personal account
+- Log in securely
+- Browse available courses: makeup, permanent eyebrow and lip makeup
+- Purchase courses and pay online via Stripe
+- Watch video lessons within the application
+- View purchased courses and track learning progress
 
-**Frontend:** Next.js, React, TailwindCSS
-**Backend:** Next.js
-**Baza podataka:** PostgreSQL
-**Plaćanje:** Stripe
-**Docker:** multi-stage build za izgradnju i deployment
-**Hosting/Deployment:** Docker Compose za lokalni razvoj,
+### For Educators
+- Add, edit, and delete courses
+- Upload video lessons, descriptions, prices, and additional materials
+- View course sales data and client information
 
+### For Administrators
+- Monthly reports on client activity
+- Course sales statistics
+- Manage clients and educators
+- Add new users to the platform
 
-## Instalacija
+---
 
-**1. Kloniranje repozitorijuma:**
+## Tech Stack
 
-git clone https://github.com/username/projekat-sminkanje.git OVDE NAS NAZIV
-cd projekat-sminkanje
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js + React + Tailwind CSS |
+| Backend | Next.js API Routes |
+| Database | PostgreSQL (via Drizzle ORM) |
+| Authentication | NextAuth.js |
+| Payments | Stripe |
+| Media Storage | Cloudinary |
+| Containerization | Docker + Docker Compose |
 
-**2. Kreiranje .env fajla sa potrebnim varijablama:**
+---
 
+## Project Structure
+
+```
+/
+├── src/                  # Application code (components, pages, API routes)
+├── public/               # Static assets (images, icons)
+├── drizzle.config.ts     # Database configuration
+├── Dockerfile            # Multi-stage build for Next.js
+└── docker-compose.yml    # Service definitions: web, db, stripe
+```
+
+---
+
+## Git Branch Strategy
+
+The project follows a structured Git branching strategy that allows parallel development across features.
+
+| Branch | Purpose |
+|---|---|
+| `main` | Stable, production-ready version of the project |
+| `develop` | Integration branch — feature branches merge here before `main` |
+| `feature/docker` | Docker support: Dockerfile, .dockerignore, docker-compose.yml |
+| `feature/tests` | Automated tests for backend and frontend, run via CI/CD pipeline |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Docker](https://www.docker.com/) and Docker Compose
+- A Stripe account for payment processing
+- A Cloudinary account for media uploads
+
+### Installation
+
+**1. Clone the repository:**
+
+```bash
+git clone https://github.com/tijanam13/internet-tehnologije-2025-appkupovinakursevazasminkanje_2022_0117.git
+cd internet-tehnologije-2025-appkupovinakursevazasminkanje_2022_0117
+```
+
+**2. Create a `.env` file with the required variables:**
+
+```env
 DATABASE_URL=postgres://user:password@db:5432/database
 NODE_ENV=production
 JWT_SECRET=your_jwt_secret
@@ -58,35 +105,28 @@ NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=your_upload_preset
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_BASE_URL=http://localhost:3000/api
 STRIPE_SECRET_KEY=your_stripe_key
-NASI PODACI
+```
 
-**3. Pokretanje Docker-a:**
+**3. Start the application with Docker:**
 
+```bash
 docker-compose up --build
+```
 
+The app will be available at `http://localhost:3000`.
 
-**Aplikacija će biti dostupna na:**
-http://localhost:3000
+---
 
+## Team
 
-## Struktura projekta
+Built for the **Internet Technologies 2025** course at the Faculty of Organizational Sciences, University of Belgrade, by:
 
-/src - Kod (komponente, stranice, API rute)
-/public - Slike, ikone
-/drizzle.config. - Konfiguracija baze podataka
-Dockerfile - Multi-stage build za Next.js aplikaciju
-docker-compose.yml - Definisanje servisa: web, db, stripe
+- [@tijanam13](https://github.com/tijanam13)
+- [@andjelaaNikolic](https://github.com/andjelaaNikolic)
+- [@andrijanaopacic](https://github.com/andrijanaopacic)
 
+---
 
-## Git grane
+## License
 
-Za razvoj projekta korišćena je Git strategija sa glavnom, integracionom i feature granama. Svaka grana ima specifičnu ulogu u razvoju i omogućava paralelan rad na različitim funkcionalnostima.
-
-main – stabilna, produkciona verzija projekta. Sadrži samo testiran i integrisan kod spreman za deployment.
-
-develop – integraciona grana u koju se spajaju sve feature grane. Ova grana predstavlja radnu verziju projekta pre spajanja u main.
-
-feature/docker – grana namenjena implementaciji Docker podrške. Sadrži: Dockerfile, dockerignore i docker-compose.yml.
-Nakon testiranja i potvrde da kontejnerizacija funkcioniše, ova grana se spaja u develop.
-
-feature/tests – grana za automatizovane testove. Sadrži folder __tests__ sa test fajlovima za backend i frontend funkcionalnosti. Testovi se pokreću kroz CI/CD pipeline i nakon validacije se spajaju u develop.
+This project was created for educational purposes as part of a university course assignment at the Faculty of Organizational Sciences, University of Belgrade.
