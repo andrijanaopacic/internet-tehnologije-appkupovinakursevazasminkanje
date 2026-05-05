@@ -121,9 +121,9 @@ The app will be available at `http://localhost:3000`.
 
 Built for the **Internet Technologies 2025** course at the Faculty of Organizational Sciences, University of Belgrade, by:
 
+- [@andrijanaopacic](https://github.com/andrijanaopacic)
 - [@tijanam13](https://github.com/tijanam13)
 - [@andjelaaNikolic](https://github.com/andjelaaNikolic)
-- [@andrijanaopacic](https://github.com/andrijanaopacic)
 
 ---
 
